@@ -1,57 +1,55 @@
-import React from 'react';
-import { IconContext } from "react-icons";
-import { FaChevronDown} from "react-icons/fa";
+import React  from 'react';
+import{FaInbox,
+  FaRegCalendarAlt,
+  FaRegCalendar,} from 'react-icons/fa'
+import { ListGroup,Badge } from 'reactstrap';
+import SidedropContainer from '../container components/sidebarcontainer';
+import FilterLink from './FilterLink';
+import { connect } from 'react-redux'
+import { setVisibilityFilter} from '../action/action_creators'
 
-
-class Sidebar extends React.Component{
-
-    render(){
+const Sidebar = (props) => {
       return(
-         <div className="left_menu" >
-         <ul className="list-group list-group-flush">
-         <a href="#" className="list-group-item list-group-item-action d-flex justify-content-between align-items-center list-group-item-dark ">
-         All Tasks
-         <span className="badge badge-light badge-pill">12</span>
-         </a>
-         <a href="#" className="list-group-item list-group-item-action d-flex justify-content-between align-items-center list-group-item-dark">
-         Today
-         <span className="badge badge-light badge-pill">12</span>
-         </a>
-         <a href="#" className="list-group-item list-group-item-action d-flex justify-content-between align-items-center list-group-item-dark">
-         This week
-        <span className="badge badge-light badge-pill">12</span>
-        </a>
-<a href="#"  className="list-group-item d-inline-flex list-group-item-action d-flex justify-content-between align-items-center list-group-item-dark ">
-  <div className="bg_color d-inline-flex"  data-toggle="collapse" data-target="#labels">
-  Labels<IconContext.Provider value={{ color: "black" ,size:"1.2em", className: "react-icons" }}>
-              <div className="bg_color" >
-              < FaChevronDown/>
-               </div>
-             </IconContext.Provider>
-  </div>
-  <aside><button data-track="navigation|projects_quick_add" type="button" className=" btn adder_icon">
-             <svg className="bg_color" width="13" height="13"><path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" 
-             fill="currentColor" fill-rule="evenodd"></path></svg></button></aside></a>
-             <div id="labels" class="collapse list-group">
-    <a className="list-group-item list-group-item-action list-group-item-dark" href="#">Link 1</a>
-  </div>
-  <a href="#"  className="list-group-item d-inline-flex list-group-item-action d-flex justify-content-between align-items-center list-group-item-dark ">
-  <div className="bg_color d-inline-flex"  data-toggle="collapse" data-target="#groups">
-  Groups<IconContext.Provider value={{ color: "black" ,size:"1.2em", className: "react-icons" }}>
-              <div className="bg_color" >
-              < FaChevronDown/>
-               </div>
-             </IconContext.Provider>
-  </div>
-  <aside><button data-track="navigation|projects_quick_add" type="button" className=" btn adder_icon">
-             <svg className="bg_color" width="13" height="13"><path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" 
-             fill="currentColor" fill-rule="evenodd"></path></svg></button></aside></a>
-             <div id="groups" class="collapse list-group">
-    <a className="list-group-item list-group-item-action list-group-item-dark" href="#">Link 1</a>
-   </div>
-  </ul>
-  </div>  
+             <ListGroup flush={true} >
+              <FilterLink filter={"Inbox"}
+              className="custom-link list-group-item"
+              onClick={() => props.setVisibilityFilter('Inbox')}>
+                <FaInbox className="mx-2"/>
+              Inbox
+              <Badge color="" className="ml-2"></Badge>
+              </FilterLink>
+              <FilterLink  filter={"Today"}
+              className="custom-link list-group-item"
+              onClick={() =>props.setVisibilityFilter('Today')}>
+                <FaRegCalendar className="mx-2"/>
+              Today
+              <Badge color="" className="ml-2"></Badge>
+              </FilterLink>
+             <FilterLink  filter={"Next Week" }
+             className="custom-link list-group-item" 
+              onClick={() =>props.setVisibilityFilter('Next Week')}>
+                <FaRegCalendarAlt className="mx-2"/>
+               Next Week
+              <Badge color="" className="ml-2"></Badge>
+              </FilterLink>
+              <SidedropContainer menuitem="Label"/>
+             </ListGroup>
     );
     }
-}
-export default Sidebar;
+const mapStateToProps = (state) => {
+  return {
+  labels:state.todos.labels,
+  filter:state.todos.filter
+}}
+
+const mapDispatchToProps = dispatch => {
+  return{
+  setVisibilityFilter:(filter) => 
+  {dispatch(setVisibilityFilter(filter))}
+
+}}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Sidebar)
