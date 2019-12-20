@@ -115,6 +115,7 @@ html,body{
 }
 .my-style{
   width:65%!important;
+  overflow-wrap: break-word;
 }
 .icon-set{
   width: 30%!important;

@@ -10,7 +10,6 @@ class App extends React.Component{
   };
  handlesidebar = () =>{
     this.state.sidebar_class === "" ?  this.setState({sidebar_class:"togglesidebar"}) : this.setState({sidebar_class:""}) ;
-     console.log(this.state.sidebar_class);
  }
   render(){
     return(

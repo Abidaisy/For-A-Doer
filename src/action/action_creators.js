@@ -14,7 +14,6 @@ let s4 = () => {
       .substring(1);
 }
 
-console.log(s4());
 
 export const addTodo = (text,label,date) => {
     return {

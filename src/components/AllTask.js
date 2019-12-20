@@ -37,7 +37,6 @@ const AllTask = (props) => {
     const handleEdit = (value) =>{
         let taskDate = collatedDate? collatedDate : value.date;
         let label = (!collatedTaskExist)? title :value.label;
-        console.log(value);
         props.editTodo(value.id,value.text,label,taskDate);
         setShowEdit(false);
     }
