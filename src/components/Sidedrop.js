@@ -46,7 +46,7 @@ const Sidedrop = (props) => {
   })
    
   return (
-    <>
+    <div>
       <ListGroupItem className="custom-link d-flex" style = {{display:"flex",cursor:"pointer"}}>
         <span onClick={toggle} className="flex-grow-1">
         <span  className="mx-2 pt-0.5" style={{transition:"all 0.5s linear"}}>
