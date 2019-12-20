@@ -117,6 +117,13 @@ html,body{
   width:65%!important;
   overflow-wrap: break-word;
 }
+.text-style{
+  width: 80%;
+  overflow-wrap: break-word;
+}
+.title-style{
+  overflow-wrap: break-word;
+}
 .icon-set{
   width: 30%!important;
 }
@@ -134,16 +141,11 @@ html,body{
 .border_reset{
   border:none!important;
 }
-/* .list-group-item {
-  color: #628078;
-  background: #101357!important;
-} */
-
 .toggle-btn{
   display: none !important;
 }
-.toggle-btn:hover{
- color:#666563;
+.nav-btn:hover{
+ color:#00b09b;
 }
 .togglesidebar{
   margin-left: 0 !important;

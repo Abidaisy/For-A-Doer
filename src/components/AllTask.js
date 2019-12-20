@@ -100,7 +100,7 @@ const AllTask = (props) => {
     //   console.log(props);
     return(
             <div className="p-4 px-5">
-            <h5 >{title}</h5>
+            <h5 className="title-style">{title}</h5>
                 {toDisplayEdit}
             {toDisplayAdd}
             </div>

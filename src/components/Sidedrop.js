@@ -1,4 +1,4 @@
-import {FaChevronDown,FaChevronRight,FaPlus,FaRegTrashAlt,FaCheck,FaEllipsisH} from 'react-icons/fa';
+import {FaChevronDown,FaChevronRight,FaPlus,FaRegTrashAlt,FaCheck,FaEllipsisV} from 'react-icons/fa';
 import React, { useState ,useEffect} from 'react';
 import { Collapse } from 'reactstrap';
 import { ListGroup, ListGroupItem} from 'reactstrap';
@@ -65,10 +65,13 @@ const Sidedrop = (props) => {
         <ul style={{listStyleType:"circle"}}>
           {props.labels.map( label => (
             <li key={label.id} style={{position:'relative'}}>
-           <FilterLink className="d-flex" filter={`${label.text}`}  
+           <FilterLink filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
-              <FaEllipsisH/>
-              <span className="text-style">{label.text}</span></FilterLink>
+              <span style={{display:"flex"}}>
+              <FaEllipsisV className="m-1"/>
+              <span className="text-style">{label.text}</span>
+              </span>
+              </FilterLink>
             <span className="sidebar-link-icon align-self-center" style={{color:'white'}} 
                onClick={() => {
                  props.deleteLabel(label.id);
