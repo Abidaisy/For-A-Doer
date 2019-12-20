@@ -64,7 +64,7 @@ const Sidedrop = (props) => {
           onClick={toggle_modal}><FaPlus className="mx-4 align-self-center"/><span>Add {props.menuitem}</span></a> */}
         <ListGroup style={{listStyleType:"circle"}}>
           {props.labels.map( label => (
-            <li key={label.id} style={{position:'relative'}}>
+            <ListGroupItem key={label.id} style={{position:'relative'}}>
            <FilterLink  filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
               {label.text}</FilterLink>
@@ -75,7 +75,7 @@ const Sidedrop = (props) => {
                    props.history.push('/');
               }}><FaRegTrashAlt/>
                 </span>
-                </li>
+                </ListGroupItem>
           )) } 
           <Modal  isOpen={modal} toggle={toggle_modal} centered={true} autoFocus={false}>
         <ModalHeader toggle={toggle_modal}><span>Add {props.menuitem}</span></ModalHeader>
