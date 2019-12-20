@@ -67,7 +67,6 @@ const Sidedrop = (props) => {
             <li key={label.id} style={{position:'relative'}}>
            <FilterLink  filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
-              <FaCheck className="mx-2"/>
               {label.text}</FilterLink>
             <span className="sidebar-link-icon align-self-center" style={{color:'white'}} 
                onClick={() => {
