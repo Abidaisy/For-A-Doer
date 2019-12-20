@@ -62,9 +62,9 @@ const Sidedrop = (props) => {
       >
         {/* <a href="#" className="text-white d-flex p-3 add_task" 
           onClick={toggle_modal}><FaPlus className="mx-4 align-self-center"/><span>Add {props.menuitem}</span></a> */}
-        <ListGroup style={{listStyleType:"circle"}}>
+        <ul style={{listStyleType:"circle"}}>
           {props.labels.map( label => (
-            <ListGroupItem key={label.id} style={{position:'relative'}}>
+            <li key={label.id} style={{position:'relative'}}>
            <FilterLink  filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
               {label.text}</FilterLink>
@@ -75,7 +75,7 @@ const Sidedrop = (props) => {
                    props.history.push('/');
               }}><FaRegTrashAlt/>
                 </span>
-                </ListGroupItem>
+                </li>
           )) } 
           <Modal  isOpen={modal} toggle={toggle_modal} centered={true} autoFocus={false}>
         <ModalHeader toggle={toggle_modal}><span>Add {props.menuitem}</span></ModalHeader>
@@ -95,7 +95,7 @@ const Sidedrop = (props) => {
           </ModalBody>
       </Modal>
       
-        </ListGroup>
+        </ul>
       </Collapse>
     </div>
   );
