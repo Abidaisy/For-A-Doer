@@ -67,7 +67,7 @@ const Sidedrop = (props) => {
             <li key={label.id} style={{position:'relative'}}>
            <FilterLink  filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
-              {label.text}</FilterLink>
+              <span className="text-style">{label.text}</span></FilterLink>
             <span className="sidebar-link-icon align-self-center" style={{color:'white'}} 
                onClick={() => {
                  props.deleteLabel(label.id);
