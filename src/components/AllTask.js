@@ -99,7 +99,7 @@ const AllTask = (props) => {
 
     //   console.log(props);
     return(
-            <div className="p-4 px-5">
+            <div className="p-4 px-5" onClick={props.sideReset}>
             <h5 className="title-style">{title}</h5>
                 {toDisplayEdit}
             {toDisplayAdd}
