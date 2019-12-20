@@ -65,8 +65,9 @@ const Sidedrop = (props) => {
         <ul style={{listStyleType:"circle"}}>
           {props.labels.map( label => (
             <li key={label.id} style={{position:'relative'}}>
-           <FilterLink  filter={`${label.text}`}  
+           <FilterLink className="d-flex" filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
+              <span className="generate-icon"></span>
               <span className="text-style">{label.text}</span></FilterLink>
             <span className="sidebar-link-icon align-self-center" style={{color:'white'}} 
                onClick={() => {
