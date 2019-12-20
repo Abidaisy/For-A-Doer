@@ -62,6 +62,7 @@
   right: 1.5rem;
   z-index: 100;
  bottom: .8rem;
+ top:.8rem;
 }
 .sidebar-link-icon:hover{
   text-decoration: none;
@@ -145,7 +146,7 @@ html,body{
   display: none !important;
 }
 .nav-btn:hover{
- color:#00b09b;
+ color:#0d0913;
 }
 .togglesidebar{
   margin-left: 0 !important;
