@@ -68,7 +68,7 @@ const Sidedrop = (props) => {
            <FilterLink filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
               <span style={{display:"flex"}}>
-              <FaEllipsisV className="m-2"/>
+              <FaEllipsisV className="mt-1 mx-2"/>
               <span className="text-style">{label.text}</span>
               </span>
               </FilterLink>
