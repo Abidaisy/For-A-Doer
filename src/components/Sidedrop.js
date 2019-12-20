@@ -64,7 +64,7 @@ const Sidedrop = (props) => {
           onClick={toggle_modal}><FaPlus className="mx-4 align-self-center"/><span>Add {props.menuitem}</span></a> */}
         <ListGroup style={{listStyleType:"circle"}}>
           {props.labels.map( label => (
-            <li class="list-group-item" key={label.id} style={{position:'relative'}}>
+            <li key={label.id} style={{position:'relative'}}>
            <FilterLink  filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
               <FaCheck className="mx-2"/>
