@@ -46,7 +46,7 @@ const Sidedrop = (props) => {
   })
    
   return (
-    <div>
+    <>
       <ListGroupItem className="custom-link d-flex" style = {{display:"flex",cursor:"pointer"}}>
         <span onClick={toggle} className="flex-grow-1">
         <span  className="mx-2 pt-0.5" style={{transition:"all 0.5s linear"}}>
@@ -64,7 +64,7 @@ const Sidedrop = (props) => {
           onClick={toggle_modal}><FaPlus className="mx-4 align-self-center"/><span>Add {props.menuitem}</span></a> */}
         <ListGroup style={{listStyleType:"circle"}}>
           {props.labels.map( label => (
-            <div key={label.id} style={{position:'relative'}}>
+            <li key={label.id} style={{position:'relative'}}>
            <FilterLink  filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
               <FaCheck className="mx-2"/>
@@ -76,7 +76,7 @@ const Sidedrop = (props) => {
                    props.history.push('/');
               }}><FaRegTrashAlt/>
                 </span>
-                </div>
+                </li>
           )) } 
           <Modal  isOpen={modal} toggle={toggle_modal} centered={true} autoFocus={false}>
         <ModalHeader toggle={toggle_modal}><span>Add {props.menuitem}</span></ModalHeader>
