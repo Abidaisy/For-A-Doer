@@ -64,7 +64,7 @@ const Sidedrop = (props) => {
           onClick={toggle_modal}><FaPlus className="mx-4 align-self-center"/><span>Add {props.menuitem}</span></a> */}
         <ListGroup style={{listStyleType:"circle"}}>
           {props.labels.map( label => (
-            <React.Fragment key={label.id} style={{position:'relative'}}>
+            <div key={label.id} style={{position:'relative'}}>
            <FilterLink  filter={`${label.text}`}  
             onClick={() =>{props.setVisibilityFilter(label.text)}}>
               <FaCheck className="mx-2"/>
@@ -76,7 +76,7 @@ const Sidedrop = (props) => {
                    props.history.push('/');
               }}><FaRegTrashAlt/>
                 </span>
-                </React.Fragment>
+                </div>
           )) } 
           <Modal  isOpen={modal} toggle={toggle_modal} centered={true} autoFocus={false}>
         <ModalHeader toggle={toggle_modal}><span>Add {props.menuitem}</span></ModalHeader>
